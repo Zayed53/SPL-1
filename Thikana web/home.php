@@ -41,7 +41,7 @@ else{
         ?> <a class="button" href="LogOUT.php"><button> <?php echo $mail ?></button></a>
         <?php } 
         else{
-        ?>    <a class="button" href="LogIN.php"><button> log IN</button></a>
+        ?>    <a class="button" href="LogIN.php"><button>Login</button></a>
         <?php }
         ?>
     </header>
@@ -58,7 +58,7 @@ else{
                 <select name="purp" id="purp" class="inputBox">
                     <option value="" disabled hidden selected>Purpose</option>
                     <option value="Rent">Rent</option>
-                    <option value="Sale">Sale</option>
+                    <option value="Sell">Sell</option>
                 </select>
                 <select name="Division" id="Division" class="inputBox">
                     <option value="" disabled hidden selected>Division</option>
@@ -149,43 +149,3 @@ else{
 
 
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <a class="site_name" href="#"><span>THIKANA.COM</a>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="item_add">Add Property</a></li>
-            </ul>
-        </nav>
-        
-        
-        
-        
-    </header>
-    <div class="background_image"></div>
-</body>
-</html>
-
-
-<option value="Barishal">Barishal</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Dhaka">Dhaka</option>-->

@@ -18,16 +18,17 @@ body{
     background-size: cover;
     background-repeat: no-repeat; */
     background-color: rgb(0, 136, 169, 1);
-    height: auto;
+    height: 155vh;
 }
 
 .container{
     position: relative;
-    max-width: 80rem;
+    max-width: 50rem;
     width: 100%;
     background: #fff;
     border-radius: 1.25rem;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 4rem;
 }
 
 .container .form{
@@ -46,69 +47,21 @@ body{
 }
 
 
-.results
+.information
 {
-    padding-left: 15rem;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}   
 
 p{
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
 }
 
-.results .currency
-{
-    font-weight: bold;
-    padding-right: 1rem;
-}
 
-.results .amount
-{
-    font-weight: bold;
-    font-size: 2rem;
-}
-
-.results .location
+.information .line
 {
     font-size: 1.6rem;
 }
 
-.results .apartment
-{
-    font-size: 1.4rem;
-}
-
-
-.results .amenities
-{
-    color: brown;
-    font-size: 1.2rem;
-}
-
-.results .beds-baths
-{
-    font-size: 1.2rem;
-    padding-right: 1.3rem;
-}
-
-
-.results .area
-{
-    font-size: 1.2rem;
-    padding-right: 1rem;
-}
-.link
-{
-    text-decoration: none;
-}
-
-
-label
-{
-    color: black;
-}
-
-img{
-    position: relative;
-    width: 17rem;
-    height: 17rem;
-}

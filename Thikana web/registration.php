@@ -20,33 +20,23 @@ if(isset($_POST['submit'])){
             $hashpassword=password_hash($password, PASSWORD_DEFAULT);
             $insert= "INSERT INTO userstry (username, email, phone_no, nid_no, address, password) VALUES ('$username', '$email', '$phn', '$nidno', '$address', '$hashpassword')";
             $sql=mysqli_query($conn, $insert);
-            // $stml->bind_param("ssssss", $name, $email, $phn, $nidno, $address, $password);
-            //$stml->execute();
-            //mysqli_query($conn, $query);
-        if($sql){
-                echo 
-                "<script> alert('registration  done'); window.location.href='LogIN.php'; </script> ";
-             }else{
-                 echo 
-                 "<script> alert('registration  failed'); </script> ";
+            if($sql){
+                    echo 
+                    "<script> alert('registration  done'); window.location.href='LogIN.php'; </script> ";
+                }else{
+                     echo 
+                     "<script> alert('registration  failed'); </script> ";
+                }
+        }
+        else{
+                echo
+                "<script> alert('pass didnt match'); </script> ";
             }
+        }
 
-/*
-        if($sql){
-            echo  
-            "<script> alert('registration  done'); </script> ";
-        }else{
-            echo 
-            "<script> alert('registration  failed'); </script> ";
-        }
-        }else{
-            echo
-            "<script> alert('pass didnt match'); </script> ";
-        }
-*/
-        }
     }
-}
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,30 +120,3 @@ if(isset($_POST['submit'])){
 </body>
 </html>
 
-<!-- <!Doctype html>
-<html>
-    <head>
-        <title>THIKANA</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
-    </head>
-    <body>
-        <h2>Registration</h2>
-        <form class="" action="" method="post" >
-            <label for="name">Name: </label>
-            <input type="Text" name="name" value=""><br>
-            <label for="email">Email: </label>
-            <input type="Text" name="email" id="email" value=""><br>
-            <label for="phone_no">Phone No: </label>
-            <input type="TEXT" name="phone_no" id="phone_no" value=""><br>
-            <label for="nid">NID: </label>
-            <input type="text" name="nid" id="nid" value=""><br>
-            <label for="address">Address: </label>
-            <input type="text" name="address" id="address" value=""><br>
-            <label for="password">Password: </label>
-            <input type="password" name="password" value=""><br>
-            <label for="check_pass">Confirm Password: </label>
-            <input type="password" name="check_pass" id="check_pass" value=""><br>
-            <input type="submit" name="submit" value="Submit">
-        </form>
-    </body>
-</html> -->

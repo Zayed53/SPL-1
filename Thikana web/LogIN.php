@@ -90,20 +90,3 @@
 
 
 
-<!-- <!Doctype html>
-<html>
-    <head>
-        <title>THIKANA</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
-    </head>
-    <body>
-        <h2>Log In</h2>
-        <form class="" action="" method="post" >
-            <label for="email">Email: </label>
-            <input type="Text" name="email" id="email" value=""><br>
-            <label for="password">Password: </label>
-            <input type="password" name="password" value=""><br>
-            <input type="submit" name="login" value="LOG IN">
-        </form>
-    </body>
-</html> -->

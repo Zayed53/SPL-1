@@ -75,9 +75,12 @@ if(mysqli_num_rows($result)>0){
     
     <div class="container">
 
-        
+        <a class="link" href="info_show.php?id=<?php echo $rows['id'] ?>">
 
         <div class="form">
+           
+        
+            
             
         
             <form action="#">
@@ -121,6 +124,7 @@ if(mysqli_num_rows($result)>0){
 
 
         </div>
+       </a>
     </div>
     
 
@@ -139,9 +143,16 @@ if(mysqli_num_rows($result)>0){
 
 
 
-
 <!-- <!Doctype html>
 <html>
 <button onclick="listView()"><i class="fa fa-bars"></i> List</button> -->
 
+
+<?php
+//        //    $id=$rows['id'];
+  //          $sqlimg="SELECT image from images where id=$id";
+    //        $resultimg=mysqli_query($conn, $sqlimg);
+      //      $rows=mysqli_fetch_array($resultimg);?>
+
+          <!-- <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> -->
 

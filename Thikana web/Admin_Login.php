@@ -39,9 +39,9 @@
         <button type="submit" name="login">LOGIN</button>
       </form>
     </div>
-    <div class="image">
+    <!-- <div class="image">
       <img src="/Images/man-with-laptop-light.png">
-    </div>
+    </div> -->
   </div>
 
 </body>
