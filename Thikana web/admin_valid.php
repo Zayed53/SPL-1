@@ -2,56 +2,17 @@
 
 <?php
 require 'config.php';
-$purp=$_POST['purp'];
-if(isset($_POST['purp']))
-{
-    $query="purpose='$purp' AND valid=1";
-}
-else
-{
-    $query="purpose='Sell' OR purpose = 'Rent' AND valid=1";
-}
-
-$division=$_POST['Division'];
-if(!empty($division)){
-    $query=$query."AND division='$division' ";
-    echo $division;
-    
-}
-$district=$_POST['District'];
-if(!empty($district)){
-    $query=$query."AND district='$district' ";
-}
-$Area=$_POST['Area'];
-if(!empty($area)){
-    $query=$query."AND area  < $Area ";
-
-}$minprice=$_POST['Minprice'];
-if(!empty($minprice)){
-    $query=$query."AND price  > $minprice ";
-}$maxprice=$_POST['Maxprice'];
-if(!empty($maxprice)){
-    $query=$query."AND price  < $maxprice ";
-}
-$room=$_POST['Room_no'];
-if(!empty($room)){
-    $query=$query."AND room_num =$room ";
-}
-$bath=$_POST['Bath_no'];
-if(!empty($bath)){
-    $query=$query."AND bath_num=$bath ";
-}
 
 //echo $query;
 
-$sql="SELECT * From property WHERE ".$query;
+$sql="SELECT * From property WHERE valid=0";
 $result=mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result)>0){
     $check=true;
 }else{
     $check=false;
-    echo "<script> alert('No result found'); </script> ";
+    echo "<script> alert('No result found');window.location.href='admin_dash.php'; </script> ";
 }
 ?>
 
@@ -81,7 +42,7 @@ if(mysqli_num_rows($result)>0){
     <div class="container">
         
 
-        <a class="link" href="info_show.php?id=<?php echo $rows['id'] ?>">
+        <a class="link" href="admin_valid_info.php?id=<?php echo $rows['id'] ?>">
         
 
         <div class="form">
@@ -90,7 +51,7 @@ if(mysqli_num_rows($result)>0){
             
             
         
-            <form action="#">
+            <form action="#" method="post">
                 
             
                 <div class="results">
@@ -118,6 +79,7 @@ if(mysqli_num_rows($result)>0){
                         <label class="beds-baths"> Bathrooms: <strong><?php echo $rows['bath_num']; ?></strong> </label>
                         <label class="area"> Area: <strong><?php echo $rows['area']; ?></strong> sqft </label>
                     </p>
+                    
         
 
                     
@@ -148,19 +110,4 @@ if(mysqli_num_rows($result)>0){
 </body>
 
 </html>
-
-
-
-<!-- <!Doctype html>
-<html>
-<button onclick="listView()"><i class="fa fa-bars"></i> List</button> -->
-
-
-<?php
-//        //    $id=$rows['id'];
-  //          $sqlimg="SELECT image from images where id=$id";
-    //        $resultimg=mysqli_query($conn, $sqlimg);
-      //      $rows=mysqli_fetch_array($resultimg);?>
-
-          <!-- <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> -->
 

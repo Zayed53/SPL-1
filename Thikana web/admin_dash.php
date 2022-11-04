@@ -1,3 +1,11 @@
+<?php
+    if(isset($_POST['valid_prop'])){
+        echo "ashse ekhane";
+        header("location:admin_valid.php");
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +27,15 @@
         <div class="form">
             
 
-            <form action="#">
+            <form action="#" method="post">
 
                 <div class="dashboard">
                     
                   
                   <input type="button" value="Validate Information" class="btn" id="">
-                  
-                  <input type="button" value="Validate Property" class="btn" id="">
-                 
+
+                  <input type="submit"  value="Validate Property" class="btn" id="valid_prop" name="valid_prop">
+                    
                   <input type="button" value="Validate Review" class="btn" id="">
                   
                   <input type="button" value="Validate User" class="btn" id="">

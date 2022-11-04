@@ -20,7 +20,7 @@ if($logedin){
         $phn=$_SESSION["phn_no"];
         $email=$_SESSION["email"];
 
-    $insert= "INSERT INTO property ( price, room_num, bath_num, area, division, district, location, purpose, amenities, seller_phone_no, seller_email) VALUES ('$Price', '$roomno', '$bathno', '$apparea', '$division', '$district', '$Location', '$purpose', '$aminities', '$phn', '$email' )";
+    $insert= "INSERT INTO property ( price, room_num, bath_num, area, division, district, location, purpose, amenities, seller_phone_no, seller_email, valid) VALUES ('$Price', '$roomno', '$bathno', '$apparea', '$division', '$district', '$Location', '$purpose', '$aminities', '$phn', '$email', 0 )";
         $sql=mysqli_query($conn, $insert);
         if($sql){
             echo  
@@ -53,7 +53,20 @@ else{
     <title>Add Property</title>
 </head>
 <body>
-    
+    <header>
+        <a class="site_name" href="home.php">THIKANA.COM</a>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/Home/home.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="/Add Property/Add_Property.html">Add Property</a></li>
+            </ul>
+        </nav>
+        <p class="lbutton">Log in</p>
+    </header>
+<section class="addProperty">    
     <div class="container">
         <div class="form add_property">
             <span class="title">Add Property</span>
@@ -92,6 +105,7 @@ else{
             </form>
         </div>
     </div>
+</section>
 </body>
 </html>
 

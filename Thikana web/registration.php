@@ -54,6 +54,20 @@ if(isset($_POST['submit'])){
     <title>Registration Form</title>
 </head>
 <body>
+    <!-- <header>
+        <a class="site_name" href="/Home/home.html">THIKANA.COM</a>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/Home/home.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="/Add Property/Add_Property.html">Add Property</a></li>
+            </ul>
+        </nav>
+        <p class="lbutton">Log in</p>
+    </header> -->
+    <!-- <section class="loginReg"> -->
     <div class="container">
         <div class="forms">
 
@@ -114,6 +128,7 @@ if(isset($_POST['submit'])){
             </div>
         </div>
     </div>
+    <!-- </section> -->
 
     <script src="script.js"></script>
 

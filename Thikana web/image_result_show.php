@@ -1,18 +1,20 @@
 <?php
 require 'config.php';
-$sql="SELECT image from images";
-$result=mysqli_query($conn, $sql);
-if($result){
-    echo "picture found";
-}else{
-    echo "picture not found";
-}
+
 ?>
 
 <!Doctype html>
 <html>
     <body>
-    <?php if(mysqli_num_rows($result)> 0){ 
+    <?php 
+    $sql="SELECT image from images";
+    $result=mysqli_query($conn, $sql);
+    if($result){
+        echo "picture found";
+    }else{
+        echo "picture not found";
+    }
+    if(mysqli_num_rows($result)> 0){ 
         while($row = $result->fetch_assoc()){
     ?>
     <p> this is running </p>
