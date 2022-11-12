@@ -1,11 +1,42 @@
 <?php
 require 'config.php';
+session_start();
+if(!empty($_SESSION["email"])){
+    $check=true;
+    $mail=$_SESSION["name"];
+}
+else{
+    $check=false;
+    
+}
 if(isset($_GET['id'])){
     $ID=$_GET['id'];
     $sql="SELECT * FROM property WHERE id=$ID";
     $result=mysqli_query($conn, $sql);
+    $rows=mysqli_fetch_array($result);
+    
+    
     
 }
+if(isset($_POST['Rent'])){
+    $id=$rows['id'];
+    $purp=$rows['purpose'];
+    $queryr="INSERT INTO request_table (user_email, property_id, purpose ) VALUES('$mail', '$id', '$purp')";
+    $insertr=mysqli_query($conn, $queryr);
+    if($insertr){
+        echo 
+        "<script> alert('Rent request sent');  </script> ";
+    }else{
+        "<script> alert('Rent request failed');  </script> ";
+    }
+    echo "<script>
+    if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+    }
+    </script>";
+    
+}
+
 
 
 ?>
@@ -25,14 +56,12 @@ if(isset($_GET['id'])){
     <span class="title">Information</span>
 
     <div class="container">
-    <?php
-       $rows=mysqli_fetch_array($result); ?>
         
 
         <div class="form">
             
 
-            <form action="#">
+            <form action="#"  method="post">
 
                 <div class="information">
                     <p> 
@@ -84,6 +113,19 @@ if(isset($_GET['id'])){
                         <label class="line"> Price : </label>
                         <label class="line">  <strong> <?php echo $rows['price']; ?> /= </strong> </label>
                     </p>
+                    
+
+                    <?php 
+                    if($check) {
+                        if($rows['purpose']=="Rent"){?>
+                            <input type="submit"  value= "Rent request" class="btn" id="Rent" name="Rent">
+                        <?php 
+                        }else{ ?>
+                            <input type="submit"  value= "Buy request" class="btn" id="Buy" name="Buy">
+                         
+                    <?php 
+                        }
+                    } ?>
 
              
 
