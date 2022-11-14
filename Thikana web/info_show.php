@@ -3,7 +3,7 @@ require 'config.php';
 session_start();
 if(!empty($_SESSION["email"])){
     $check=true;
-    $mail=$_SESSION["name"];
+    $mail=$_SESSION["email"];
 }
 else{
     $check=false;
@@ -28,6 +28,24 @@ if(isset($_POST['Rent'])){
         "<script> alert('Rent request sent');  </script> ";
     }else{
         "<script> alert('Rent request failed');  </script> ";
+    }
+    echo "<script>
+    if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+    }
+    </script>";
+    
+}
+else if(isset($_POST['Buy'])){
+    $id=$rows['id'];
+    $purp=$rows['purpose'];
+    $queryr="INSERT INTO request_table (user_email, property_id, purpose ) VALUES('$mail', '$id', '$purp')";
+    $insertr=mysqli_query($conn, $queryr);
+    if($insertr){
+        echo 
+        "<script> alert('Buy request sent');  </script> ";
+    }else{
+        "<script> alert('Buy request failed');  </script> ";
     }
     echo "<script>
     if ( window.history.replaceState ) {
