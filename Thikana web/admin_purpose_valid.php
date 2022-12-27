@@ -154,7 +154,7 @@ if(mysqli_num_rows($result)>0){
                         <label class="beds-baths"> Bathrooms: <strong><?php echo $rows['bath_num']; ?></strong> </label>
                         <label class="area"> Area: <strong><?php echo $rows['area']; ?></strong> sqft </label>
                     </p> --> 
-                    <input type="submit"  value="Validate Request" class="btn" id="valid_req" name="valid_req">
+                    <!-- <input type="submit"  value="Validate Request" class="btn" id="valid_req" name="valid_req"> -->
         
 
                     

@@ -5,6 +5,8 @@
     }
     else if(isset($_POST['valid_req'])){
         header("location:admin_purpose_valid.php");
+    }else if(isset($_POST['review'])){
+        header("location:Admin_review.php");
     }
     
 ?>
@@ -39,7 +41,7 @@
 
                   <input type="submit"  value="Validate Property" class="btn" id="valid_prop" name="valid_prop">
                     
-                  <input type="button" value="Validate Review" class="btn" id="">
+                  <input type="submit" value="view all property" class="btn" id="review" name="review">
                   
                   <input type="button" value="Validate User" class="btn" id="">
 

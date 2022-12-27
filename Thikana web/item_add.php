@@ -22,7 +22,7 @@ if($logedin){
         $sql=mysqli_query($conn, $insert);
         if($sql){
             echo  
-            "<script> alert('New Property addition request sent'); window.location.href='home.php'; </script> ";
+            "<script> alert('New Property addition request sent'); window.location.href='home.php'; </script> "; // window.location.replace('home.php')
         }else{
             echo 
             "<script> alert('property addition  failed'); </script> ";
