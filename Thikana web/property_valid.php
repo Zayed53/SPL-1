@@ -70,114 +70,119 @@ if(isset($_GET['id'])){
 </head>
 <body>
 
-    <span class="title">Provide Information</span>
-
-
-    <div class="container">
-        
-
-        <div class="form">
-        <form action="#" method="post" enctype="multipart/form-data">  
-
-            <block class="block">
-
-                <section id="info-show">
-
-                    <div class="information">
-                        <p> 
-                            <label class="line"> Number of rooms : </label>
-                            <label class="line">  <strong> <?php echo $rows['room_num']; ?> </strong> </label>
-                        </p>
-    
-                        <p> 
-                            <label class="line"> Number of Bathrooms : </label>
-                            <label class="line">  <strong> <?php echo $rows['bath_num']; ?> </strong> </label>
-                        </p>
-    
-                        <p> 
-                            <label class="line"> Apartment size : </label>
-                            <label class="line">  <strong> <?php echo $rows['area']; ?> </strong> sqft </label>
-                        </p>
-    
-                        <p> 
-                            <label class="line"> District : </label>
-                            <label class="line">  <strong> <?php echo $rows['district']; ?> </strong> </label>
-                        </p>
-    
-                        <p> 
-                            <label class="line"> Division : </label>
-                            <label class="line">  <strong> <?php echo $rows['division']; ?> </strong> </label>
-                        </p>
-    
-                        <p> 
-                            <label class="line"> Location : </label>
-                            <label class="line">  <strong> <?php echo $rows['location']; ?> </strong> </label>
-                        </p>
-    
-                        <p> 
-                            <label class="line"> Purpose : </label>
-                            <label class="line">  <strong> <?php echo $rows['purpose']; ?> </strong> </label>
-                        </p>
-
-                    </div>
-                
-                    <h2>Give Image</h2>
-                    <div id="image-upload" >
-                        <input type="file" name="image"/>
-                        <input type="file" name="image"/>
-                        <input type="file" name="image"/>
-                    </div>
-                    <!-- <a href="item_add.php"> item add </a> <br>
-                    <a href="LogOUT.php">Log out </a> -->
-                    <div class="check-box">
-
-                        <input type="checkbox" class="option-input">
-                        I Confirm that the information is valid
-
-                    </div>
-
-                </section>
-
-
-              
-                <section id="right-side">
-
-                    <textarea class="textarea" name="Discription" placeholder="Add Description..."></textarea>
-
-                    <textarea class="textarea" name="amenities" placeholder="Add Amenities..."></textarea>
-
-                    <input class="textarea" type="number" id="price" name="price" placeholder="Add Price...">
-                
-                </section>
-
-
-
-                
-
-            </block>
-
-            
-            <div class="buttons">
-                <input type="submit" value="Validate Information" class="btn" id="valid_it" name="valid_it">
-            </div>
-
-            <div class="buttons">
-                <input type="submit" value="Reject Information" class="btn" id="not_valid_it" name="not_valid_it">
-            </div>
-            
-        </form>
-        </div>
-
-        
+    <div class="sidebar">
+        <header>THIKANA</header>
+        <ul>
+         <li><a href="/Provide Info/provide_info.html">Validate Information</a></li>
+         <li><a href="#">Validate Property</a></li>
+         <li><a href="/User Validation/user_validation.html">Validate User</a></li>
+         <li><a href="#">Validate Review</a></li>
+        </ul>
     </div>
 
-    
+    <section class="validate_info">
 
-    
-
-    
+        <span class="title">Provide Information</span>
 
 
+        <div class="container">
+            
+
+            <div class="form">
+            <form action="#" method="post" enctype="multipart/form-data">  
+
+                <block class="block">
+
+                    <section id="info-show">
+
+                        <div class="information">
+                            <p> 
+                                <label class="line"> Number of rooms : </label>
+                                <label class="line">  <strong> <?php echo $rows['room_num']; ?> </strong> </label>
+                            </p>
+        
+                            <p> 
+                                <label class="line"> Number of Bathrooms : </label>
+                                <label class="line">  <strong> <?php echo $rows['bath_num']; ?> </strong> </label>
+                            </p>
+        
+                            <p> 
+                                <label class="line"> Apartment size : </label>
+                                <label class="line">  <strong> <?php echo $rows['area']; ?> </strong> sqft </label>
+                            </p>
+        
+                            <p> 
+                                <label class="line"> District : </label>
+                                <label class="line">  <strong> <?php echo $rows['district']; ?> </strong> </label>
+                            </p>
+        
+                            <p> 
+                                <label class="line"> Division : </label>
+                                <label class="line">  <strong> <?php echo $rows['division']; ?> </strong> </label>
+                            </p>
+        
+                            <p> 
+                                <label class="line"> Location : </label>
+                                <label class="line">  <strong> <?php echo $rows['location']; ?> </strong> </label>
+                            </p>
+        
+                            <p> 
+                                <label class="line"> Purpose : </label>
+                                <label class="line">  <strong> <?php echo $rows['purpose']; ?> </strong> </label>
+                            </p>
+
+                        </div>
+                    
+                        <h2>Give Image</h2>
+                        <div id="image-upload" >
+                            <input type="file" name="image"/>
+                            <input type="file" name="image"/>
+                            <input type="file" name="image"/>
+                        </div>
+                        <!-- <a href="item_add.php"> item add </a> <br>
+                        <a href="LogOUT.php">Log out </a> -->
+                        <div class="check-box">
+
+                            <input type="checkbox" class="option-input">
+                            I Confirm that the information is valid
+
+                        </div>
+
+                    </section>
+
+
+                
+                    <section id="right-side">
+
+                        <textarea class="textarea" name="Discription" placeholder="Add Description..."></textarea>
+
+                        <textarea class="textarea" name="amenities" placeholder="Add Amenities..."></textarea>
+
+                        <input class="textarea" type="number" id="price" name="price" placeholder="Add Price...">
+                    
+                    </section>
+
+
+
+                    
+
+                </block>
+
+                
+                <div class="buttons">
+                    <input type="submit" value="Validate Information" class="btn" id="valid_it" name="valid_it">
+                </div>
+
+                <div class="buttons">
+                    <input type="submit" value="Reject Information" class="btn" id="not_valid_it" name="not_valid_it">
+                </div>
+                
+            </form>
+            </div>
+
+            
+        </div>
+    </section>
 
 </body>
 
