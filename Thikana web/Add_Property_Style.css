@@ -77,12 +77,12 @@ button:hover{
     background-image: url(./todd-kent-178j8tJrNlc-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 130vh;
+    height: 100vh;
 }
 
 .container{
     position: relative;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     background: #fff;
     border-radius: 10px;

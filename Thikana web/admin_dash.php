@@ -1,7 +1,10 @@
 <?php
     if(isset($_POST['valid_prop'])){
-        echo "ashse ekhane";
+        //echo "ashse ekhane";
         header("location:admin_valid.php");
+    }
+    else if(isset($_POST['valid_req'])){
+        header("location:admin_purpose_valid.php");
     }
     
 ?>
@@ -32,7 +35,7 @@
                 <div class="dashboard">
                     
                   
-                  <input type="button" value="Validate Information" class="btn" id="">
+                  <input type="submit" value="Validate Request" class="btn" id="valid_req" name="valid_req">
 
                   <input type="submit"  value="Validate Property" class="btn" id="valid_prop" name="valid_prop">
                     

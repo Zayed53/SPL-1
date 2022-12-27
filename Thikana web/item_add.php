@@ -8,7 +8,6 @@ if(!empty($_SESSION["email"])){
 }
 if($logedin){
     if(isset($_POST['add'])){
-        $Price=$_POST['price'];
         $roomno=$_POST['room'];
         $bathno=$_POST['bath'];
         $apparea=$_POST['area'];
@@ -16,11 +15,10 @@ if($logedin){
         $district=$_POST['dist'];
         $Location=$_POST['location'];
         $purpose=$_POST['purp'];
-        $aminities=$_POST['amin'];
         $phn=$_SESSION["phn_no"];
         $email=$_SESSION["email"];
 
-    $insert= "INSERT INTO property ( price, room_num, bath_num, area, division, district, location, purpose, amenities, seller_phone_no, seller_email, valid) VALUES ('$Price', '$roomno', '$bathno', '$apparea', '$division', '$district', '$Location', '$purpose', '$aminities', '$phn', '$email', 0 )";
+    $insert= "INSERT INTO property ( price, room_num, bath_num, area, division, district, location, purpose, amenities,  seller_phone_no, seller_email, valid) VALUES ( 0,'$roomno', '$bathno', '$apparea', '$division', '$district', '$Location', '$purpose','none', '$phn', '$email', 0 )";
         $sql=mysqli_query($conn, $insert);
         if($sql){
             echo  
@@ -72,9 +70,10 @@ else{
             <span class="title">Add Property</span>
 
             <form action="#" method="post" >
-                <div class="input-field">
+                <!-- price baad -->
+                <!-- <div class="input-field">
                     <input type="number" name="price" placeholder="Enter Price" required>
-                </div>
+                </div> -->
                 <div class="input-field">
                     <input type="number" name="room" id="room"  placeholder="Enter Room Number" required>
                 </div>
@@ -96,9 +95,9 @@ else{
                 <div class="input-field">
                     <input type="text"  name="purp" id="purp" placeholder="Enter Purpose" required>
                 </div>
-                <div class="input-field">
+                <!-- <div class="input-field">
                     <input type="text"  name="amin" id="amin" placeholder="Enter Aminities" required>
-                </div>
+                </div> -->
                 <div class="input-field button">
                     <input type="submit"  name="add" value="Submit">
                 </div>

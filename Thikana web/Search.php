@@ -5,11 +5,11 @@ require 'config.php';
 $purp=$_POST['purp'];
 if(isset($_POST['purp']))
 {
-    $query="purpose='$purp' AND valid=1";
+    $query="purpose='$purp' AND valid=1 AND searchable=1";
 }
 else
 {
-    $query="purpose='Sell' OR purpose = 'Rent' AND valid=1";
+    $query="purpose='Sell' OR purpose = 'Rent' AND valid=1 AND searchable=1";
 }
 
 $division=$_POST['Division'];

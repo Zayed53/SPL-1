@@ -24,7 +24,7 @@ if(mysqli_num_rows($result)>0){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showing Search Result</title>
 
-    <link rel="stylesheet" href="search_result_style.css">
+    <link rel="stylesheet" href="Admin_search_result_style.css">
 </head>
 
 <body>
@@ -32,9 +32,6 @@ if(mysqli_num_rows($result)>0){
     if($check){
        while($rows=$result->fetch_assoc()){
             $id=$rows['id'];
-            $sqlimg="SELECT image from images where id=$id LIMIT 1";
-            $resultimg=mysqli_query($conn, $sqlimg);
-            $imgrows=mysqli_fetch_array($resultimg);
         ?>
 
     <span class="title"></span>
@@ -42,23 +39,17 @@ if(mysqli_num_rows($result)>0){
     <div class="container">
         
 
-        <a class="link" href="admin_valid_info.php?id=<?php echo $rows['id'] ?>">
+        <a class="link" href="property_valid.php?id=<?php echo $rows['id'] ?>">
         
 
         <div class="form">
-           
-        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($imgrows['image']); ?>" />
-            
-            
-        
             <form action="#" method="post">
                 
             
                 <div class="results">
                 
                     <p> 
-                        <label class="currency"> BDT </label> 
-                        <label class="amount"> <?php echo $rows['price']; ?> </label> 
+                        <label class="amount"> <?php echo "ID: ".$rows['id']; ?> </label> 
                     </p>
                     
                     <p>
@@ -67,23 +58,12 @@ if(mysqli_num_rows($result)>0){
                     
 
                     <p>
-                        <label class="apartment"> Apartment </label>
+                        <label class="apartment"> <?php echo $rows['seller_email']; ?>  </label>
                     </p>
                     
                     <p>
-                        <label class="amenities"> Amenities: <?php echo $rows['amenities']; ?> </label>
+                        <label class="amenities"> Purpose: <?php echo $rows['purpose']; ?> </label>
                     </p>
-
-                    <p>
-                        <label class="beds-baths"> Bedrooms: <strong><?php echo $rows['room_num']; ?></strong> </label>
-                        <label class="beds-baths"> Bathrooms: <strong><?php echo $rows['bath_num']; ?></strong> </label>
-                        <label class="area"> Area: <strong><?php echo $rows['area']; ?></strong> sqft </label>
-                    </p>
-                    
-        
-
-                    
-
                 </div>
                 
 
