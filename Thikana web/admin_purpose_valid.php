@@ -120,7 +120,7 @@ if(mysqli_num_rows($result)>0){
     
     <div class="container">
         
-
+        <a class="link" href="Admin_purpose_user_valid.php?id=<?php echo $rows['property_id'] ?>">
         <div class="form">
            
             

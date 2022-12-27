@@ -70,18 +70,18 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(0, 136, 169, 1);
-    height: 215vh;
+    /* height: 190vh; */
 }
 
 .container {
     position: relative;
-    max-width: 93rem;
+    /* max-width: 93rem; */
     width: 100%;
     background: #fff;
-    border-radius: 1.25rem;
+    /* border-radius: 1.25rem; */
     border-style: hiddne;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
 
     min-height: 80rem;
     /* margin-left: 1rem; */
