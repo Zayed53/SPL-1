@@ -143,12 +143,6 @@
                                             mysqli_query($conn, $dltsql);
                                             $updtsql="UPDATE property SET searchable=0 WHERE id=$checkid";
                                             $updateproperty=mysqli_query($conn, $updtsql);
-                                            if($updateproperty){
-                                                echo  "<script> alert('done seachable'); </script> ";
-                                            }else{
-                                                echo  "<script> alert('failed seachable'); </script> ";
-                                            }
-
                                             unset($_POST['valid_req']);
                                             echo  
                                             "<script> alert('done'); window.location.href='admin_purpose_valid.php'; </script> ";
@@ -171,6 +165,8 @@
                                         if($updateresult){
                                             $dltsql="DELETE FROM request_table WHERE property_id=$checkid";
                                             mysqli_query($conn, $dltsql);
+                                            $updtsql="UPDATE property SET searchable=0 WHERE id=$checkid";
+                                            $updateproperty=mysqli_query($conn, $updtsql);
                                             unset($_POST['valid_req']);
                                             echo  
                                             "<script> alert('done'); window.location.href='admin_purpose_valid.php'; </script> ";
@@ -186,6 +182,8 @@
                                         if($insertrresult){
                                             $dltsql="DELETE FROM request_table WHERE property_id=$checkid";
                                             mysqli_query($conn, $dltsql);
+                                            $updtsql="UPDATE property SET searchable=0 WHERE id=$checkid";
+                                            $updateproperty=mysqli_query($conn, $updtsql);
                                             unset($_POST['valid_req']);
                                             echo  
                                             "<script> alert('done'); window.location.href='admin_purpose_valid.php'; </script> ";
@@ -198,6 +196,12 @@
                                     //implement alter or new insert
                                 }
                             }//implement reject button
+                            if(isset($_POST['reject'])){
+                                $delemail=$userrows['user_email'];
+                                $dltmsql="DELETE FROM request_table WHERE user_email='$delemail'";
+                                mysqli_query($conn, $dltmsql);
+
+                            }
                             
                             echo "<script>
                             if ( window.history.replaceState ) {
@@ -227,7 +231,7 @@
     
                                 <p> 
                                     <label class="line"> Purpose : </label>
-                                    <label class="line"> <?php echo $userrows['user_email'];?>  <strong>  </strong> </label>
+                                    <label class="line"> <?php echo $detailrows['email'];?>  <strong>  </strong> </label>
                                 </p>
     
                                 <p> 
@@ -240,7 +244,7 @@
                             <div class="buttons">
                                 <input type="submit" value="Validate User" id="valid_req" name="valid_req" class="btn">
                             
-                                <input type="submit" value="Reject User" class="btn" id="valid_req" name="valid_req">
+                                <input type="submit" value="Reject User" class="btn" id="reject" name="reject">
                             </div>
 
                         </block>
