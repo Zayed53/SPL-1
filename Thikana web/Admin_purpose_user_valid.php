@@ -19,6 +19,18 @@
     <link rel="stylesheet" href="user_validation_style.css">
 </head>
 <body>
+<div class="sidebar">
+        <header>THIKANA</header>
+        <ul>
+         <li><a href="/Provide Info/provide_info.html">Validate Information</a></li>
+         <li><a href="#">Validate Property</a></li>
+         <li><a href="/User Validation/user_validation.html">Validate User</a></li>
+         <li><a href="#">Validate Review</a></li>
+        </ul>
+</div>
+
+<section class="user_validation">
+
 
     <span class="title">User Validation</span>
 
@@ -153,7 +165,7 @@
 
                             <div class="buttons">
                                 <!-- <input type="submit" value="Validate User" id="valid_req" name="valid_req" class="btn"> -->
-                                <a class="btn" href="valid_buy_rent.php?id=<?php echo $ID?>&email=<?php echo $userrows['user_email']?>&pur=<?php echo $purp?>" style="text-decoration:none"> <?php echo "valid" ?></a> 
+                                <a class="btn" href="valid_buy_rent.php?id=<?php echo $ID?>&email=<?php echo $userrows['user_email']?>&pur=<?php echo $purp?>" style="text-decoration:none"> <?php echo "Accept" ?></a> 
                             
                                 <a class="btn" href="reject_request.php?id=<?php echo $ID?>&email=<?php echo $userrows['user_email']?>" style="text-decoration:none"> <?php echo "Reject" ?></a>
                             </div>
@@ -194,7 +206,7 @@
     </div>
 
 
-
+</section>
 
 </body>
 
